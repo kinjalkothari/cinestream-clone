@@ -45,8 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // Initialize empty profile data if it doesn't exist
             if (!localStorage.getItem('cinestream_profiles')) {
                 const defaultProfiles = [
-                    { id: 1, name: 'Main', avatar: 'https://api.dicebear.com/9.x/avataaars/svg?seed=Main' },
-                    { id: 2, name: 'Kids', avatar: 'https://api.dicebear.com/9.x/avataaars/svg?seed=Kids' }
+                    { id: 1, name: 'Main', avatar: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23e50914'/%3E%3Ctext x='50' y='65' font-size='50' font-weight='bold' text-anchor='middle' fill='white' font-family='Arial, sans-serif'%3EM%3C/text%3E%3C/svg%3E" },
+                    { id: 2, name: 'Kids', avatar: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230071eb'/%3E%3Ctext x='50' y='65' font-size='50' font-weight='bold' text-anchor='middle' fill='white' font-family='Arial, sans-serif'%3EK%3C/text%3E%3C/svg%3E" }
                 ];
                 localStorage.setItem('cinestream_profiles', JSON.stringify(defaultProfiles));
             }
