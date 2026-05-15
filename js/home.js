@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- Auth Check ---
-    const activeProfile = JSON.parse(localStorage.getItem('cinestream_active_profile'));
-    if (!localStorage.getItem('cinestream_auth') || !activeProfile) {
+    const activeProfile = JSON.parse(localStorage.getItem('cinestream_active_profile_v2'));
+    if (!localStorage.getItem('cinestream_auth_v2') || !activeProfile) {
         window.location.href = 'index.html';
         return;
     }
@@ -59,8 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Logout ---
     logoutBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        localStorage.removeItem('cinestream_auth');
-        localStorage.removeItem('cinestream_active_profile');
+        localStorage.removeItem('cinestream_auth_v2');
+        localStorage.removeItem('cinestream_active_profile_v2');
         window.location.href = 'index.html';
     });
 

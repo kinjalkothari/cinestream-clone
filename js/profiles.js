@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Check auth
-    if (localStorage.getItem('cinestream_auth') !== 'true') {
+    if (localStorage.getItem('cinestream_auth_v2') !== 'true') {
         window.location.href = 'index.html';
         return;
     }
@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const profilesGrid = document.getElementById('profilesGrid');
     
     // Load profiles
-    const profiles = JSON.parse(localStorage.getItem('cinestream_profiles')) || [];
+    const profiles = JSON.parse(localStorage.getItem('cinestream_profiles_v2')) || [];
     
     function renderProfiles() {
         profilesGrid.innerHTML = '';
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function selectProfile(profile) {
         // Set active profile
-        localStorage.setItem('cinestream_active_profile', JSON.stringify(profile));
+        localStorage.setItem('cinestream_active_profile_v2', JSON.stringify(profile));
         
         // Add zoom animation to selected profile
         document.body.style.transition = 'opacity 0.5s ease';
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 avatar: avatarSvg
             });
             
-            localStorage.setItem('cinestream_profiles', JSON.stringify(profiles));
+            localStorage.setItem('cinestream_profiles_v2', JSON.stringify(profiles));
             renderProfiles();
         }
     }
