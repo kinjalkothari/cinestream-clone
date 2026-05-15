@@ -1,0 +1,124 @@
+.profile-header {
+    width: 100%;
+    padding: 1.5rem 3%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.logo h1 {
+    color: var(--accent-color);
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.profiles-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--bg-primary);
+}
+
+.profiles-container h1 {
+    font-size: 3.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.profiles-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 800px;
+    margin-bottom: 3rem;
+}
+
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    animation: fadeIn 0.8s ease forwards;
+    opacity: 0;
+}
+
+.profile-card:nth-child(1) { animation-delay: 0.1s; }
+.profile-card:nth-child(2) { animation-delay: 0.2s; }
+.profile-card:nth-child(3) { animation-delay: 0.3s; }
+.profile-card:nth-child(4) { animation-delay: 0.4s; }
+.profile-card:nth-child(5) { animation-delay: 0.5s; }
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 4px;
+    background-color: #333;
+    background-size: cover;
+    background-position: center;
+    border: 3px solid transparent;
+    transition: all var(--transition-fast);
+}
+
+.profile-name {
+    margin-top: 1rem;
+    color: #808080;
+    font-size: 1.2rem;
+    transition: all var(--transition-fast);
+}
+
+.profile-card:hover .avatar {
+    border-color: white;
+}
+
+.profile-card:hover .profile-name {
+    color: white;
+}
+
+.add-profile-btn .avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: #808080;
+}
+
+.add-profile-btn:hover .avatar {
+    background-color: #e5e5e5;
+    color: #141414;
+}
+
+.manage-btn {
+    background: transparent;
+    border: 1px solid #808080;
+    color: #808080;
+    padding: 0.5rem 1.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all var(--transition-fast);
+}
+
+.manage-btn:hover {
+    border-color: white;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .avatar {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .profiles-container h1 {
+        font-size: 2.5rem;
+    }
+}

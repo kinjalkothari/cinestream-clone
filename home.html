@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineStream - Home</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-left">
+            <div class="logo">
+                <h1>CINESTREAM</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">TV Shows</a></li>
+                <li><a href="#">Movies</a></li>
+                <li><a href="#" id="navWatchlist">My List <span class="badge" id="watchlistCount">0</span></a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <div class="search-box glass-panel">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Titles, people, genres">
+                <div class="search-results" id="searchResults"></div>
+            </div>
+            <button id="themeToggle" class="icon-btn" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+            <div class="profile-dropdown">
+                <img src="" alt="Profile" class="nav-avatar" id="navAvatar">
+                <div class="dropdown-content glass-panel">
+                    <p id="navProfileName">User</p>
+                    <hr>
+                    <a href="profiles.html"><i class="fas fa-users"></i> Switch Profiles</a>
+                    <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Sign Out out of CineStream</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- AI Mood Discoverer -->
+    <div class="mood-bar glass-panel animate-fade-in" id="moodBar">
+        <div class="mood-content">
+            <i class="fas fa-magic text-accent"></i>
+            <span>Not sure what to watch? Tell AI your mood:</span>
+            <input type="text" id="moodInput" placeholder="e.g., I want something dark and thrilling">
+            <button id="moodBtn" class="btn btn-primary btn-sm">Discover</button>
+        </div>
+        <button id="closeMoodBtn" class="icon-btn"><i class="fas fa-times"></i></button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="heroSection">
+        <div class="hero-bg" id="heroBg"></div>
+        <div class="hero-vignette"></div>
+        <div class="hero-content animate-slide-up">
+            <div class="hero-badge" id="heroBadge">Top 10 Today</div>
+            <h1 class="hero-title" id="heroTitle">Loading...</h1>
+            <div class="hero-meta">
+                <span class="match" id="heroMatch">98% Match</span>
+                <span class="year" id="heroYear">2023</span>
+                <span class="rating" id="heroRating">TV-MA</span>
+                <span class="seasons" id="heroDuration">2 Seasons</span>
+            </div>
+            <p class="hero-synopsis" id="heroSynopsis">Loading synopsis...</p>
+            <div class="hero-actions">
+                <button class="btn btn-primary" id="heroPlayBtn"><i class="fas fa-play"></i> Play</button>
+                <button class="btn btn-secondary" id="heroInfoBtn"><i class="fas fa-info-circle"></i> More Info</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Rows -->
+    <main class="main-content">
+        <!-- Mood Results Row (Hidden by default) -->
+        <section class="content-row" id="moodResultsRow" style="display: none;">
+            <h2 class="row-title text-accent"><i class="fas fa-magic"></i> AI Suggestions for you</h2>
+            <div class="row-container" id="moodResultsContainer"></div>
+        </section>
+
+        <!-- Continue Watching Row (Hidden by default) -->
+        <section class="content-row" id="continueRow" style="display: none;">
+            <h2 class="row-title">Continue Watching for <span id="cwProfileName">User</span></h2>
+            <div class="row-container" id="continueContainer"></div>
+        </section>
+
+        <!-- AI For You Row -->
+        <section class="content-row">
+            <h2 class="row-title">Top Picks for You</h2>
+            <div class="row-container" id="forYouContainer"></div>
+        </section>
+
+        <!-- Trending Row -->
+        <section class="content-row">
+            <h2 class="row-title">Trending Now</h2>
+            <div class="row-container" id="trendingContainer"></div>
+        </section>
+
+        <!-- Action & Sci-Fi -->
+        <section class="content-row">
+            <h2 class="row-title">Action & Sci-Fi</h2>
+            <div class="row-container" id="actionContainer"></div>
+        </section>
+        
+        <!-- Comedy -->
+        <section class="content-row">
+            <h2 class="row-title">Comedies</h2>
+            <div class="row-container" id="comedyContainer"></div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2024 CineStream Clone. Built as a portfolio project.</p>
+    </footer>
+
+    <!-- Modals & Overlays -->
+    <!-- Content Detail Modal -->
+    <div class="modal-overlay" id="detailModal">
+        <div class="modal-content glass-panel">
+            <button class="close-modal"><i class="fas fa-times"></i></button>
+            <div class="modal-hero">
+                <div class="modal-bg" id="modalBg"></div>
+                <div class="modal-hero-content">
+                    <h2 id="modalTitle">Title</h2>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary" id="modalPlayBtn"><i class="fas fa-play"></i> Play</button>
+                        <button class="icon-btn-round" id="modalWatchlistBtn" title="Add to Watchlist"><i class="fas fa-plus"></i></button>
+                        <button class="icon-btn-round" id="modalLikeBtn" title="Rate"><i class="far fa-thumbs-up"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-details">
+                <div class="modal-left">
+                    <div class="modal-meta">
+                        <span class="match" id="modalMatch">98% Match</span>
+                        <span class="year" id="modalYear">2023</span>
+                        <span class="rating" id="modalRating">HD</span>
+                        <span class="imdb"><i class="fab fa-imdb"></i> <span id="modalImdb">8.5</span></span>
+                    </div>
+                    <p class="modal-synopsis" id="modalSynopsis">Synopsis</p>
+                    
+                    <div class="user-rating-section">
+                        <h3>Your Rating</h3>
+                        <div class="star-rating" id="starRating">
+                            <i class="far fa-star" data-rating="1"></i>
+                            <i class="far fa-star" data-rating="2"></i>
+                            <i class="far fa-star" data-rating="3"></i>
+                            <i class="far fa-star" data-rating="4"></i>
+                            <i class="far fa-star" data-rating="5"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-right">
+                    <p><strong>Cast:</strong> <span id="modalCast">Cast names</span></p>
+                    <p><strong>Genres:</strong> <span id="modalGenres">Genres</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trailer Video Modal -->
+    <div class="trailer-overlay" id="trailerModal">
+        <div class="trailer-container">
+            <button class="close-trailer" id="closeTrailer"><i class="fas fa-times"></i></button>
+            <div class="video-wrapper">
+                <iframe id="trailerIframe" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast glass-panel" id="toast">Message</div>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>

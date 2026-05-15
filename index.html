@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineStream | Watch TV Shows Online, Watch Movies Online</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="login-background">
+        <!-- Background Overlay -->
+        <div class="bg-overlay"></div>
+        
+        <header class="login-header">
+            <div class="logo">
+                <h1>CINESTREAM</h1>
+            </div>
+        </header>
+
+        <main class="login-container glass-panel animate-slide-up">
+            <h2>Sign In</h2>
+            <form id="loginForm">
+                <div class="input-group">
+                    <input type="email" id="email" required placeholder=" ">
+                    <label for="email">Email or phone number</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" required placeholder=" ">
+                    <label for="password">Password</label>
+                    <i class="fas fa-eye toggle-password" id="togglePassword"></i>
+                </div>
+                <p id="errorMsg" class="error-msg"></p>
+                <button type="submit" class="btn btn-primary login-btn">Sign In</button>
+                
+                <div class="form-help">
+                    <div>
+                        <input type="checkbox" id="rememberMe" checked>
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+                    <a href="#">Need help?</a>
+                </div>
+            </form>
+            
+            <div class="login-footer">
+                <p>New to CineStream? <a href="#" class="signup-link">Sign up now</a>.</p>
+                <p class="captcha-terms">This page is protected by Google reCAPTCHA to ensure you're not a bot. <a href="#">Learn more.</a></p>
+            </div>
+            
+            <div class="demo-notice">
+                <p><i class="fas fa-info-circle"></i> Demo Mode: Use any email and password to log in.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>
