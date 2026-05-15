@@ -45,8 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // Initialize empty profile data if it doesn't exist
             if (!localStorage.getItem('cinestream_profiles')) {
                 const defaultProfiles = [
-                    { id: 1, name: 'Main', avatar: 'https://occ-0-4857-2164.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABXz4LMjMiMacKUdfl3879fL8g-A58b7Pz1I4fN2yXFjJ2Bssw1v-aD0H-76-2h5K20l1A2t-rNhh14QY6Z8s2Yg3n1Ld8eW.png?r=1d4' },
-                    { id: 2, name: 'Kids', avatar: 'https://occ-0-4857-2164.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABQww-PjUv3Y-MvF5R_GgW_E3-L7ZkF4q8_u-V37X1i2lZfK6zB4Z0eKqG5p7B-nJ1e2e9H2o4N_t4n1n4X5N3_O1j2o3c4v5.png?r=2b1' }
+                    { id: 1, name: 'Main', avatar: 'https://api.dicebear.com/9.x/avataaars/svg?seed=Main' },
+                    { id: 2, name: 'Kids', avatar: 'https://api.dicebear.com/9.x/avataaars/svg?seed=Kids' }
                 ];
                 localStorage.setItem('cinestream_profiles', JSON.stringify(defaultProfiles));
             }

@@ -68,9 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const newId = profiles.length ? Math.max(...profiles.map(p => p.id)) + 1 : 1;
             // Generate a random avatar from Netflix CDN
             const avatars = [
-                'https://occ-0-4857-2164.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABfjwXqIYd3kCEU6KWsiHSHvkft8VhZg0yyD50a_pHXku4dz9VvWjoKIJHLhXZ-80470_x1B0B82sD7z0-T64-X2rX1v-wz1uMw.png?r=a41',
-                'https://occ-0-4857-2164.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABcUJz897vY6xS8O66rM5T9hZfK98xO8s4BvN1rW-0tZJqWwO2r31_sR2xO0d-Xm3wG92c10b4s6yK4x_0kR9X7k0mN3r18b.png?r=e6e',
-                'https://occ-0-4857-2164.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABY5cwIbM7shRfcXmfQg98cqMqiZZ8sReZnj4y_keCAHeXmG_SoqLD8SXYistPtesdq0.png?r=229'
+                `https://api.dicebear.com/9.x/avataaars/svg?seed=${name}1`,
+                `https://api.dicebear.com/9.x/avataaars/svg?seed=${name}2`,
+                `https://api.dicebear.com/9.x/avataaars/svg?seed=${name}3`
             ];
             
             profiles.push({
