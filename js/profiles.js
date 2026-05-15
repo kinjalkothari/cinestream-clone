@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const firstLetter = name.charAt(0).toUpperCase() || 'U';
             const colors = ['%2346d369', '%23e87c03', '%23b20710', '%230071eb', '%238c8c8c'];
             const randomColor = colors[Math.floor(Math.random() * colors.length)];
-            const avatarSvg = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='${randomColor}'/%3E%3Ctext x='50' y='65' font-size='50' font-weight='bold' text-anchor='middle' fill='white' font-family='Arial, sans-serif'%3E${firstLetter}%3C/text%3E%3C/svg%3E`;
+            const avatarSvg = `data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27${randomColor}%27/%3E%3Ctext x=%2750%27 y=%2765%27 font-size=%2750%27 font-weight=%27bold%27 text-anchor=%27middle%27 fill=%27white%27 font-family=%27Arial, sans-serif%27%3E${firstLetter}%3C/text%3E%3C/svg%3E`;
             
             
             profiles.push({
